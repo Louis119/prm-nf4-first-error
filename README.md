@@ -32,11 +32,11 @@ figures/              论文插图（矢量/位图）
 paper/                论文 PDF
 ```
 
-字段说明见 [DATA_DICTIONARY.md](DATA_DICTIONARY.md)，逐条复现见 [REPRODUCE.md](REPRODUCE.md)。
+字段说明见 [DATA_DICTIONARY.md](DATA_DICTIONARY.md)，逐条复现命令见 [REPRODUCE.md](REPRODUCE.md)。**哪些结果能重算、哪些只能核对汇总数据、哪些未公开，见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)。**
 
 ## 复现
 
-无需 GPU。所有数字都可由 `data/` 中的逐条评分在笔记本上重算：
+无需 GPU。以下三组结果可由 `data/` 中的逐条评分在笔记本上重算（脚本使用相对路径，无需改配置）：
 
 ```bash
 python code/a3_readout_panel.py     # 读出面板：A/B/C 的判定改变与栅格统计

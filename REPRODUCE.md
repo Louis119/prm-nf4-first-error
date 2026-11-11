@@ -20,7 +20,7 @@ python code/a3b_ties.py           # 产出 A3_TIES.json
 ## 2. 源 F20 的并列与规则敏感性
 
 ```bash
-python code/analyze_full.py       # 产出 A1_FULL.json
+python code/a1_f20_rules.py       # 源 F20 的并列与规则敏感性
 ```
 
 预期（严格 `<`，各自源 F20 阈值）：ΔL Math +0.12、RLH −0.59；改 `≤` 后 Math −0.18、RLH −0.79；并列步占比 1.50%/1.43%（Math）、0.76%/0.71%（RLH）。
@@ -28,8 +28,7 @@ python code/analyze_full.py       # 产出 A1_FULL.json
 ## 3. 同阈值对照：恢复目标的差值来自阈值
 
 ```bash
-python code/a2_bootstrap.py       # MathShepherd，产出 A2_BOOTSTRAP.json
-python code/a2_rlh_local.py       # RLHFlow，产出 A2_RLH.json
+python code/a2_same_threshold.py  # 两个模型，各自阈值 vs 共同阈值
 ```
 
 预期（MathShepherd）：各自阈值 ΔL=−0.235；同阈值 +0.235 [−0.17,+0.64]，ΔF=+0.942 [+0.38,+1.57]。
@@ -42,4 +41,4 @@ python code/a2_rlh_local.py       # RLHFlow，产出 A2_RLH.json
 
 - 所有比较都是配对的：同一批题目上的两种精度。
 - 重采样以 `group_id` 为单位，跨层同组不拆。
-- 脚本中的绝对路径需改成你本地的仓库根目录。
+- 脚本使用相对路径，在仓库根目录直接运行即可。
