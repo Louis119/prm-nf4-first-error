@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "rows": 4677,
+  "batches": 276,
+  "seconds": 494.0331394672394,
+  "sha256": "3cae37fccc0705203b443746e22f4b139b59e08646a40827bdc7325991739096",
+  "meta": {
+    "model": "rlhflow8b",
+    "backbone": "bf16",
+    "source": "/mnt/workspace/prm-v10-ascend-20261107-night/models/rlhflow8b/model",
+    "revision": "0a4c93ad67513db6f2a22005c9271e2b71632c4a",
+    "quantized_modules": 0,
+    "quantized_module_names": [],
+    "head_before": {
+      "weight": "9095f3c30d631fedcc6f14a79e248732e9c510a1c5d6905347c10e8952754c71"
+    },
+    "head_after": {
+      "weight": "9095f3c30d631fedcc6f14a79e248732e9c510a1c5d6905347c10e8952754c71"
+    },
+    "embedding_before": "58e142ac387fe022eafa305036e1ac8dbe68697b1a0ac91fec88daf8e627c674",
+    "embedding_after": "58e142ac387fe022eafa305036e1ac8dbe68697b1a0ac91fec88daf8e627c674",
+    "head_dtype": "torch.bfloat16",
+    "embedding_dtype": "torch.bfloat16",
+    "nf4_example": null,
+    "flags": {
+      "device": "Ascend910_9362",
+      "hf32_matmul": false,
+      "hf32_conv": false,
+      "float32_matmul_precision": "highest",
+      "deterministic": true,
+      "autocast_enabled": false,
+      "threads": 4,
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "transformers": "5.12.1",
+      "bitsandbytes": "0.50.2"
+    },
+    "candidates": [
+      10,
+      12
+    ],
+    "pad_id": 128001
+  },
+  "perf": [
+    {
+      "batch": 0,
+      "size": 64,
+      "bucket": 256,
+      "padded": 173
+    },
+    {
+      "batch": 1,
+      "size": 64,
+      "bucket": 256,
+      "padded": 199
+    },
+    {
+      "batch": 2,
+      "size": 64,
+      "bucket": 256,
+      "padded": 217
+    },
+    {
+      "batch": 273,
+      "size": 8,
+      "bucket": 4096,
+      "padded": 3378
+    },
+    {
+      "batch": 274,
+      "size": 8,
+      "bucket": 4096,
+      "padded": 3774
+    },
+    {
+      "batch": 275,
+      "size": 5,
+      "bucket": 4096,
+      "padded": 4088
+    }
+  ]
+}

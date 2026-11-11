@@ -1,0 +1,47 @@
+category,key,value,unit,source,note
+counts,configs_total,69,configs,METRICS.csv,unique config_id; matches accepted 69
+counts,configs_h800,16,configs,METRICS.csv,
+counts,configs_ascend,53,configs,METRICS.csv,53 includes 2 INT8 tokenwise variants
+counts,configs_original,67,configs,COVERAGE.csv,
+counts,configs_int8_variants,2,configs,COVERAGE.csv,
+counts,scoring_records,344936,records,COVERAGE.csv,sum of raw_rows_actual; NOT independent samples
+models,math_shepherd7b_configs,16,configs,METRICS.csv,
+models,qwen7b_configs,21,configs,METRICS.csv,
+models,rlhflow8b_configs,19,configs,METRICS.csv,
+models,skywork7b_configs,13,configs,METRICS.csv,
+hardware,Ascend_configs,53,configs,METRICS.csv,
+hardware,H800_configs,16,configs,METRICS.csv,
+samples,independent_items,5000,items,INPUT_SNAPSHOT.json,
+samples,independent_groups,2927,groups,INPUT_SNAPSHOT.json,connected problem group is the resampling unit
+samples,cross_model_common_ids,4996,items,INPUT_SNAPSHOT.json,
+samples_by_source,ProcessBench/omnimath,845,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,ProcessBench/gsm8k,338,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,ProcessBench/olympiadbench,845,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,ProcessBench/math,845,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,PRMBench/exposed_validation,1623,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,PRMBench/development,323,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,Hard2Verify/V8_admitted,181,items,items.jsonl,disjoint top-level source counts sum to 5000
+samples_by_source,total,5000,items,items.jsonl,
+samples_math_common_high,E_qwen_rlhflow,3677,error trajectories,METRICS.csv,same E for Qwen and RLHFlow MATH/common_high
+samples_math_common_high,C_qwen_rlhflow,1323,all-correct trajectories,METRICS.csv,
+samples_math_common_high,E_mathshepherd,3673,error trajectories,METRICS.csv,MathShepherd admitted 4996
+samples_math_common_high,C_mathshepherd,1323,all-correct trajectories,METRICS.csv,
+environment_layer,n=26,torch=2.10.0+cpu; torch_npu=2.10.0.post4; transformers=4.51.3; bitsandbytes=0.50.2,configs,METRICS.csv,exact frozen software_layer string
+environment_layer,n=16,torch=2.6.0+cu124; torch_npu=None; transformers=4.51.3; bitsandbytes=0.45.5,configs,METRICS.csv,exact frozen software_layer string
+environment_layer,n=15,torch=2.7.1+cpu; torch_npu=2.7.1.post4; transformers=4.51.3; bitsandbytes=0.50.2,configs,METRICS.csv,exact frozen software_layer string
+environment_layer,n=8,torch=2.10.0+cpu; torch_npu=2.10.0.post4; transformers=4.51.3; bitsandbytes=None,configs,METRICS.csv,exact frozen software_layer string
+environment_layer,n=4,torch=2.7.1+cpu; torch_npu=2.7.1.post4; transformers=4.51.3; bitsandbytes=None,configs,METRICS.csv,exact frozen software_layer string
+environment,h800_gpu,NVIDIA H800 PCIe,GPU,METRICS.csv software_layer,
+environment,ascend_2_10,torch=2.10.0+cpu; torch_npu=2.10.0.post4; transformers=4.51.3; bitsandbytes=0.50.2,software,METRICS.csv,RLHFlow primary stratum
+environment,ascend_2_7,torch=2.7.1+cpu; torch_npu=2.7.1.post4; transformers=4.51.3; bitsandbytes=0.50.2,software,METRICS.csv,mixed into other Ascend configs
+bootstrap,seed,20261108,,INPUT_SNAPSHOT.json,
+bootstrap,replicates,10000,draws,INPUT_SNAPSHOT.json,
+bootstrap,unit,connected problem group,,INPUT_SNAPSHOT.json,
+provenance,archive_sha256,a4df46dea20e68a50131bf8bf4fae52b4bdf477e33565d0d79721a66e0135298,,ACCEPTANCE.json,
+provenance,input_binding_sha256,78cc9271d3de3f6b8bcbbef154cc70c3c4ff8462105c8eac71ad73ab8fcbe69a,,INPUT_SNAPSHOT.json,
+method,quantization_precision_labels,bf16;bnb_int8_tokenwise_v1;fp32_reference;fp4;gptq_w4a16;nf4,,METRICS.csv precision field,present
+method,calibration_f20_rule,strict score < t; t = minima[int(0.2*n)] over source all-correct minima; ties conservative; fitted before target scoring,,calibration RESULTS.json specification.threshold_rule,present
+method,precision_repair_method,missing,,no validated precision-repair method in accepted V10 tables,missing
+method,quantizer_detail,missing,,"accepted tables carry precision labels, not per-config quantizer settings",missing
+method,prm_readout,missing,,not part of the accepted summary tables used here,missing
+method,precision_repair_status,missing,,REPORT.md,V10 has no validated repair result; V11 excluded
